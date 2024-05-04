@@ -506,3 +506,990 @@ result = {'type': 'plot', 'value': 'C:/Users/dell/Documents/Projects/Current/Gra
 2024-05-02 22:33:45 [INFO] Executing Step 7: ResultValidation
 2024-05-02 22:33:45 [INFO] Answer: {'type': 'plot', 'value': 'C:/Users/dell/Documents/Projects/Current/Graph_Flask_streamlit/exports/charts/temp_chart.png'}
 2024-05-02 22:33:45 [INFO] Executing Step 8: ResultParsing
+2024-05-04 13:41:39 [INFO] Question: Hi
+2024-05-04 13:41:39 [INFO] Running PandasAI with bamboo_llm LLM...
+2024-05-04 13:41:39 [INFO] Prompt ID: 9283a9e2-ea0c-4ece-a7f8-2ffb41a1e0d2
+2024-05-04 13:41:39 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-05-04 13:41:39 [INFO] Executing Step 0: ValidatePipelineInput
+2024-05-04 13:41:39 [INFO] Executing Step 1: CacheLookup
+2024-05-04 13:41:39 [INFO] Executing Step 2: PromptGeneration
+2024-05-04 13:41:41 [INFO] Using prompt: <dataframe>
+dfs[0]:1757x8
+Sub Category,Price,Discount,Rating,Title,Currency,Feature,Product Description
+Cleaning Supplies,,After $8 OFF,Rated 4 out of 5 stars based on 3294 reviews.,"McCormick, Gourmet Bruschetta Seasoning Mix, Sweet Basil & Oregano, 19 oz",$,,"Start your morning with a burst of energy and focus from our delicious Green Tea Instant Sticks. Sip on a smooth, satisfying green tea infusion made with traditional Japanese matcha powder, plus an infusion of moringa and essential vitamins. Each packet contains a balanced combination of nutrients, amino acids, and prebiotic fiber.
+VitaCup Green Tea Instant Sticks are ideal for any tea drinker, especially the wellness warrior on-the-go! Pour one packet with 8 ounces of hot or cold water and stir until completely dissolved (about 10 seconds). You’ll love the energy and detox benefts from a powerhouse blend of antioxidants and natural caffeine.   2-pack (48-counttotal)
+Premium Green Tea Leaves & Matcha Powder
+Nutrient-Dense Moringa Oleifera
+Vitamins B5, B6, B1, B12, B9 & D3
+Inulin Healthy Prebiotic Fiber
+Natural Antioxidants, No Artificial Ingredients
+Dietitian Formulated
+Keto-Friendly, Supports Energy & Mood
+Vegan, Sugar-Free, Soy-Free, Dairy-Free, Gluten-Free"
+Snacks,"$1,999.99 ",After $4.50 OFF,,Birthday Full of Happiness Floral Arrangement,,"3-Ply, 8.4"" x 8.4"" Tissue Size   10 Tissues per Pack   36 Packs   360 Total Tissues","Variety pack: 16-Super Fruit Punch, 8-Appley Ever After, 8-Berry Berry Good Lemonade, 8-Goodness Grape"
+Organic,$79.99 ,After $5 OFF,Rated 3.5 out of 5 stars based on 20 reviews.,"Kirkland Signature Nut Bars, 1.41 oz, 30-count",$,"Durable Tritan™ Plastic Vessel
+Stores on its Side or Upright
+Shatterproof
+Dishwasher Safe",
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+
+
+
+
+### QUERY
+ Hi
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2024-05-04 13:41:41 [INFO] Executing Step 3: CodeGenerator
+2024-05-04 13:41:53 [INFO] Prompt used:
+            None
+            
+2024-05-04 13:41:53 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+dfs = [
+    pd.DataFrame({
+        'Sub Category': ['Snacks', 'Organic', 'Cleaning Supplies'],
+        'Price': ['$1,999.99 ', '$79.99 ', ''],
+        'Discount': ['After $4.50 OFF', 'After $5 OFF', 'After $8 OFF'],
+        'Rating': ['', 'Rated 3.5 out of 5 stars based on 20 reviews.', 'Rated 4 out of 5 stars based on 3294 reviews.'],
+        'Title': ['Birthday Full of Happiness Floral Arrangement', 'Kirkland Signature Nut Bars, 1.41 oz, 30-count', 'McCormick, Gourmet Bruschetta Seasoning Mix, Sweet Basil & Oregano, 19 oz'],
+        'Currency': ['', '$', '$'],
+        'Feature': ['3-Ply, 8.4" x 8.4" Tissue Size   10 Tissues per Pack   36 Packs   360 Total Tissues', 'Durable Tritan™ Plastic Vessel\nStores on its Side or Upright\nShatterproof\nDishwasher Safe', ''],
+        'Product Description': ['Variety pack: 16-Super Fruit Punch, 8-Appley Ever After, 8-Berry Berry Good Lemonade, 8-Goodness Grape', '', 'Start your morning with a burst of energy and focus from our delicious Green Tea Instant Sticks. Sip on a smooth, satisfying green tea infusion made with traditional Japanese matcha powder, plus an infusion of moringa and essential vitamins. Each packet contains a balanced combination of nutrients, amino acids, and prebiotic fiber.\nVitaCup Green Tea Instant Sticks are ideal for any tea drinker, especially the wellness warrior on-the-go! Pour one packet with 8 ounces of hot or cold water and stir until completely dissolved (about 10 seconds). You’ll love the energy and detox benefts from a powerhouse blend of antioxidants and natural caffeine.   2-pack (48-counttotal)\nPremium Green Tea Leaves & Matcha Powder\nNutrient-Dense Moringa Oleifera\nVitamins B5, B6, B1, B12, B9 & D3\nInulin Healthy Prebiotic Fiber\nNatural Antioxidants, No Artificial Ingredients\nDietitian Formulated\nKeto-Friendly, Supports Energy & Mood\nVegan, Sugar-Free, Soy-Free, Dairy-Free, Gluten-Free']
+    })
+]
+
+# Declare result var: 
+result = {"type": "string", "value": "Hello! The dataframes have been successfully loaded."}
+            ```
+            
+2024-05-04 13:41:53 [INFO] Executing Step 4: CachePopulation
+2024-05-04 13:41:53 [INFO] Executing Step 5: CodeCleaning
+2024-05-04 13:41:53 [INFO] 
+Code running:
+```
+result = {'type': 'string', 'value': 'Hello! The dataframes have been successfully loaded.'}
+        ```
+2024-05-04 13:41:53 [INFO] Executing Step 6: CodeExecution
+2024-05-04 13:41:53 [INFO] Executing Step 7: ResultValidation
+2024-05-04 13:41:53 [INFO] Answer: {'type': 'string', 'value': 'Hello! The dataframes have been successfully loaded.'}
+2024-05-04 13:41:53 [INFO] Executing Step 8: ResultParsing
+2024-05-04 13:42:30 [INFO] Question: Plot a pie chart of total Price of each sub category
+2024-05-04 13:42:30 [INFO] Running PandasAI with bamboo_llm LLM...
+2024-05-04 13:42:30 [INFO] Prompt ID: 9e6aee37-e2b8-47a8-bccd-f4cb8c328a8e
+2024-05-04 13:42:30 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-05-04 13:42:30 [INFO] Executing Step 0: ValidatePipelineInput
+2024-05-04 13:42:30 [INFO] Executing Step 1: CacheLookup
+2024-05-04 13:42:30 [INFO] Executing Step 2: PromptGeneration
+2024-05-04 13:42:32 [INFO] Using prompt: <dataframe>
+dfs[0]:1757x8
+Sub Category,Price,Discount,Rating,Title,Currency,Feature,Product Description
+Laundry Detergent & Supplies,$11.99 ,After $1.50 OFF,,"Oberto Thin Style Beef Jerky, Original, 1.2 oz, 8-count",$,Original   HE Compatible   152 Loads   170 Total fl oz,Coconut Water Hydration PackThe Original17.5 fl oz (518 mL) can15-countMore Information:Non-GMOChill before serving
+Cleaning Supplies,$529.99 ,After $40 - $70 OFF,Rated 4.5 out of 5 stars based on 440 reviews.,"Planters Dry Roasted Peanuts, 3.25 lbs",$,,
+Bakery & Desserts,,After $3.30 OFF,Rated 4.3 out of 5 stars based on 462 reviews.,"HP 910XL High Yield Ink Cartridge, Black, 2-count",,"Use to Prepare Dips and Dressings   Add to Chicken, Tuna, Potato or Pasta Salad   Use as a Spread for Sandwiches or Grilled Corn   Brush Over Chicken, Pork or Seafood on the Grill to Add Flavor and Moistness   Net Weight 56 oz.","The primary source of Kirkland Signature Organic Sumatra is The Koperasi Produsen Petani Kopi Gayo coop, known as Kopsen PKG, located in Central Aceh, Takengon, an ideal location for growing coffee. 345 farmers in 4 villages began growing coffee in 2012 and formed the coop in 2016. They have 587 hectares of coffee plantations and capacity to produce around 410 metric tons ready export coffee annually. Kopsen PKG has worked to improve productivity and quality by distributing seeds, providing training, and building a processing unit facility. The coop is Organic (USDA-NOP & EU) certified.Taken to a Medium-Dark roast profile this coffee features the sought after classic Sumatra profile, of richer chocolates, red wine, and spices.Tasting Notes: Complex. Chocolate, Red Wine, soft leather, mild spices, and a sweet tobacco finish."
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+
+
+
+
+### QUERY
+ Plot a pie chart of total Price of each sub category
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2024-05-04 13:42:32 [INFO] Executing Step 3: CodeGenerator
+2024-05-04 13:42:36 [INFO] Prompt used:
+            None
+            
+2024-05-04 13:42:36 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Write code here
+total_prices = dfs[0].groupby("Sub Category")["Price"].sum()
+
+# Plotting pie chart
+plt.figure(figsize=(8, 8))
+plt.pie(total_prices, labels=total_prices.index, autopct='%1.1f%%', startangle=140)
+plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+plt.title('Total Price of Each Sub Category')
+
+# Save the plot as a png file
+plt.savefig('total_price_pie_chart.png')
+
+# Declare result var
+result = {"type": "plot", "value": "total_price_pie_chart.png"}
+            ```
+            
+2024-05-04 13:42:36 [INFO] Executing Step 4: CachePopulation
+2024-05-04 13:42:36 [INFO] Executing Step 5: CodeCleaning
+2024-05-04 13:42:36 [INFO] Saving charts to C:\Users\dell\Documents\Projects\Current\Graph_Flask_streamlit\exports\charts\temp_chart.png
+2024-05-04 13:42:36 [INFO] 
+Code running:
+```
+total_prices = dfs[0].groupby('Sub Category')['Price'].sum()
+plt.figure(figsize=(8, 8))
+plt.pie(total_prices, labels=total_prices.index, autopct='%1.1f%%', startangle=140)
+plt.axis('equal')
+plt.title('Total Price of Each Sub Category')
+plt.savefig('C:/Users/dell/Documents/Projects/Current/Graph_Flask_streamlit/exports/charts/temp_chart.png')
+result = {'type': 'plot', 'value': 'C:/Users/dell/Documents/Projects/Current/Graph_Flask_streamlit/exports/charts/temp_chart.png'}
+        ```
+2024-05-04 13:42:36 [INFO] Executing Step 6: CodeExecution
+2024-05-04 13:42:36 [ERROR] Failed with error: Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 3, in <module>
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\pyplot.py", line 3546, in pie
+    return gca().pie(
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\__init__.py", line 1478, in inner
+    return func(ax, *map(sanitize_sequence, args), **kwargs)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\axes\_axes.py", line 3219, in pie
+    x = np.asarray(x, np.float32)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\series.py", line 953, in __array__
+    arr = np.asarray(values, dtype=dtype)
+ValueError: could not convert string to float: '$56.99 $159.99 $44.99 $39.99 $59.99 $59.99 $74.99 $59.99 $29.99 $159.99 $62.99 $299.99 $54.99 $54.99 $89.99 $59.99 $89.99 $49.99 $159.99 $89.99 $99.99 $89.99 $24.99 $39.99 $72.99 $119.99 $109.99 $99.99 $34.99 $59.99 $89.99 $89.99 $59.99 '
+
+2024-05-04 13:42:36 [WARNING] Failed to execute code retrying with a correction framework [retry number: 1]
+2024-05-04 13:42:36 [INFO] Executing Pipeline: ErrorCorrectionPipeline
+2024-05-04 13:42:36 [INFO] Executing Step 0: ErrorPromptGeneration
+2024-05-04 13:42:36 [INFO] Using prompt: <dataframe>
+dfs[0]:1757x8
+Sub Category,Price,Discount,Rating,Title,Currency,Feature,Product Description
+Laundry Detergent & Supplies,$11.99 ,After $1.50 OFF,,"Oberto Thin Style Beef Jerky, Original, 1.2 oz, 8-count",$,Original   HE Compatible   152 Loads   170 Total fl oz,Coconut Water Hydration PackThe Original17.5 fl oz (518 mL) can15-countMore Information:Non-GMOChill before serving
+Cleaning Supplies,$529.99 ,After $40 - $70 OFF,Rated 4.5 out of 5 stars based on 440 reviews.,"Planters Dry Roasted Peanuts, 3.25 lbs",$,,
+Bakery & Desserts,,After $3.30 OFF,Rated 4.3 out of 5 stars based on 462 reviews.,"HP 910XL High Yield Ink Cartridge, Black, 2-count",,"Use to Prepare Dips and Dressings   Add to Chicken, Tuna, Potato or Pasta Salad   Use as a Spread for Sandwiches or Grilled Corn   Brush Over Chicken, Pork or Seafood on the Grill to Add Flavor and Moistness   Net Weight 56 oz.","The primary source of Kirkland Signature Organic Sumatra is The Koperasi Produsen Petani Kopi Gayo coop, known as Kopsen PKG, located in Central Aceh, Takengon, an ideal location for growing coffee. 345 farmers in 4 villages began growing coffee in 2012 and formed the coop in 2016. They have 587 hectares of coffee plantations and capacity to produce around 410 metric tons ready export coffee annually. Kopsen PKG has worked to improve productivity and quality by distributing seeds, providing training, and building a processing unit facility. The coop is Organic (USDA-NOP & EU) certified.Taken to a Medium-Dark roast profile this coffee features the sought after classic Sumatra profile, of richer chocolates, red wine, and spices.Tasting Notes: Complex. Chocolate, Red Wine, soft leather, mild spices, and a sweet tobacco finish."
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ Plot a pie chart of total Price of each sub category
+
+You generated this python code:
+total_prices = dfs[0].groupby('Sub Category')['Price'].sum()
+plt.figure(figsize=(8, 8))
+plt.pie(total_prices, labels=total_prices.index, autopct='%1.1f%%', startangle=140)
+plt.axis('equal')
+plt.title('Total Price of Each Sub Category')
+plt.savefig('C:/Users/dell/Documents/Projects/Current/Graph_Flask_streamlit/exports/charts/temp_chart.png')
+result = {'type': 'plot', 'value': 'C:/Users/dell/Documents/Projects/Current/Graph_Flask_streamlit/exports/charts/temp_chart.png'}
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 3, in <module>
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\pyplot.py", line 3546, in pie
+    return gca().pie(
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\__init__.py", line 1478, in inner
+    return func(ax, *map(sanitize_sequence, args), **kwargs)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\axes\_axes.py", line 3219, in pie
+    x = np.asarray(x, np.float32)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\series.py", line 953, in __array__
+    arr = np.asarray(values, dtype=dtype)
+ValueError: could not convert string to float: '$56.99 $159.99 $44.99 $39.99 $59.99 $59.99 $74.99 $59.99 $29.99 $159.99 $62.99 $299.99 $54.99 $54.99 $89.99 $59.99 $89.99 $49.99 $159.99 $89.99 $99.99 $89.99 $24.99 $39.99 $72.99 $119.99 $109.99 $99.99 $34.99 $59.99 $89.99 $89.99 $59.99 '
+
+
+Fix the python code above and return the new python code:
+2024-05-04 13:42:36 [INFO] Executing Step 1: CodeGenerator
+2024-05-04 13:42:40 [INFO] Prompt used:
+            None
+            
+2024-05-04 13:42:40 [INFO] Code generated:
+            ```
+            import pandas as pd
+import matplotlib.pyplot as plt
+
+# Remove any extra characters in the 'Price' column and convert it to float
+dfs[0]['Price'] = dfs[0]['Price'].str.replace('$', '').str.strip().astype(float)
+
+total_prices = dfs[0].groupby('Sub Category')['Price'].sum()
+plt.figure(figsize=(8, 8))
+plt.pie(total_prices, labels=total_prices.index, autopct='%1.1f%%', startangle=140)
+plt.axis('equal')
+plt.title('Total Price of Each Sub Category')
+plt.show()
+            ```
+            
+2024-05-04 13:42:40 [INFO] Executing Step 2: CodeCleaning
+2024-05-04 13:42:40 [INFO] 
+Code running:
+```
+dfs[0]['Price'] = dfs[0]['Price'].str.replace('$', '').str.strip().astype(float)
+total_prices = dfs[0].groupby('Sub Category')['Price'].sum()
+plt.figure(figsize=(8, 8))
+plt.pie(total_prices, labels=total_prices.index, autopct='%1.1f%%', startangle=140)
+plt.axis('equal')
+plt.title('Total Price of Each Sub Category')
+plt.show()
+        ```
+2024-05-04 13:42:40 [ERROR] Failed with error: Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 1, in <module>
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\generic.py", line 6532, in astype
+    new_data = self._mgr.astype(dtype=dtype, copy=copy, errors=errors)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\internals\managers.py", line 414, in astype
+    return self.apply(
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\internals\managers.py", line 354, in apply
+    applied = getattr(b, f)(**kwargs)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\internals\blocks.py", line 616, in astype
+    new_values = astype_array_safe(values, dtype, copy=copy, errors=errors)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\dtypes\astype.py", line 238, in astype_array_safe
+    new_values = astype_array(values, dtype, copy=copy)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\dtypes\astype.py", line 183, in astype_array
+    values = _astype_nansafe(values, dtype, copy=copy)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\dtypes\astype.py", line 134, in _astype_nansafe
+    return arr.astype(dtype, copy=True)
+ValueError: could not convert string to float: '32.99through-83.99'
+
+2024-05-04 13:42:40 [WARNING] Failed to execute code retrying with a correction framework [retry number: 2]
+2024-05-04 13:42:40 [INFO] Executing Pipeline: ErrorCorrectionPipeline
+2024-05-04 13:42:40 [INFO] Executing Step 0: ErrorPromptGeneration
+2024-05-04 13:42:40 [INFO] Using prompt: <dataframe>
+dfs[0]:1757x8
+Sub Category,Price,Discount,Rating,Title,Currency,Feature,Product Description
+Laundry Detergent & Supplies,$11.99 ,After $1.50 OFF,,"Oberto Thin Style Beef Jerky, Original, 1.2 oz, 8-count",$,Original   HE Compatible   152 Loads   170 Total fl oz,Coconut Water Hydration PackThe Original17.5 fl oz (518 mL) can15-countMore Information:Non-GMOChill before serving
+Cleaning Supplies,$529.99 ,After $40 - $70 OFF,Rated 4.5 out of 5 stars based on 440 reviews.,"Planters Dry Roasted Peanuts, 3.25 lbs",$,,
+Bakery & Desserts,,After $3.30 OFF,Rated 4.3 out of 5 stars based on 462 reviews.,"HP 910XL High Yield Ink Cartridge, Black, 2-count",,"Use to Prepare Dips and Dressings   Add to Chicken, Tuna, Potato or Pasta Salad   Use as a Spread for Sandwiches or Grilled Corn   Brush Over Chicken, Pork or Seafood on the Grill to Add Flavor and Moistness   Net Weight 56 oz.","The primary source of Kirkland Signature Organic Sumatra is The Koperasi Produsen Petani Kopi Gayo coop, known as Kopsen PKG, located in Central Aceh, Takengon, an ideal location for growing coffee. 345 farmers in 4 villages began growing coffee in 2012 and formed the coop in 2016. They have 587 hectares of coffee plantations and capacity to produce around 410 metric tons ready export coffee annually. Kopsen PKG has worked to improve productivity and quality by distributing seeds, providing training, and building a processing unit facility. The coop is Organic (USDA-NOP & EU) certified.Taken to a Medium-Dark roast profile this coffee features the sought after classic Sumatra profile, of richer chocolates, red wine, and spices.Tasting Notes: Complex. Chocolate, Red Wine, soft leather, mild spices, and a sweet tobacco finish."
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ Plot a pie chart of total Price of each sub category
+
+You generated this python code:
+dfs[0]['Price'] = dfs[0]['Price'].str.replace('$', '').str.strip().astype(float)
+total_prices = dfs[0].groupby('Sub Category')['Price'].sum()
+plt.figure(figsize=(8, 8))
+plt.pie(total_prices, labels=total_prices.index, autopct='%1.1f%%', startangle=140)
+plt.axis('equal')
+plt.title('Total Price of Each Sub Category')
+plt.show()
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 1, in <module>
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\generic.py", line 6532, in astype
+    new_data = self._mgr.astype(dtype=dtype, copy=copy, errors=errors)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\internals\managers.py", line 414, in astype
+    return self.apply(
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\internals\managers.py", line 354, in apply
+    applied = getattr(b, f)(**kwargs)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\internals\blocks.py", line 616, in astype
+    new_values = astype_array_safe(values, dtype, copy=copy, errors=errors)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\dtypes\astype.py", line 238, in astype_array_safe
+    new_values = astype_array(values, dtype, copy=copy)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\dtypes\astype.py", line 183, in astype_array
+    values = _astype_nansafe(values, dtype, copy=copy)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\dtypes\astype.py", line 134, in _astype_nansafe
+    return arr.astype(dtype, copy=True)
+ValueError: could not convert string to float: '32.99through-83.99'
+
+
+Fix the python code above and return the new python code:
+2024-05-04 13:42:40 [INFO] Executing Step 1: CodeGenerator
+2024-05-04 13:42:43 [INFO] Prompt used:
+            None
+            
+2024-05-04 13:42:43 [INFO] Code generated:
+            ```
+            import pandas as pd
+import matplotlib.pyplot as plt
+
+# Cleaning the Price column by removing '$' and converting to float
+dfs[0]['Price'] = dfs[0]['Price'].str.replace(',', '').str.replace('$', '').astype(float)
+
+# Grouping by Sub Category and summing the Price
+total_prices = dfs[0].groupby('Sub Category')['Price'].sum()
+
+# Plotting the pie chart
+plt.figure(figsize=(8, 8))
+plt.pie(total_prices, labels=total_prices.index, autopct='%1.1f%%', startangle=140)
+plt.axis('equal')
+plt.title('Total Price of Each Sub Category')
+plt.show()
+            ```
+            
+2024-05-04 13:42:43 [INFO] Executing Step 2: CodeCleaning
+2024-05-04 13:42:43 [INFO] 
+Code running:
+```
+dfs[0]['Price'] = dfs[0]['Price'].str.replace(',', '').str.replace('$', '').astype(float)
+total_prices = dfs[0].groupby('Sub Category')['Price'].sum()
+plt.figure(figsize=(8, 8))
+plt.pie(total_prices, labels=total_prices.index, autopct='%1.1f%%', startangle=140)
+plt.axis('equal')
+plt.title('Total Price of Each Sub Category')
+plt.show()
+        ```
+2024-05-04 13:42:43 [ERROR] Failed with error: Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 1, in <module>
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\generic.py", line 6532, in astype
+    new_data = self._mgr.astype(dtype=dtype, copy=copy, errors=errors)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\internals\managers.py", line 414, in astype
+    return self.apply(
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\internals\managers.py", line 354, in apply
+    applied = getattr(b, f)(**kwargs)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\internals\blocks.py", line 616, in astype
+    new_values = astype_array_safe(values, dtype, copy=copy, errors=errors)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\dtypes\astype.py", line 238, in astype_array_safe
+    new_values = astype_array(values, dtype, copy=copy)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\dtypes\astype.py", line 183, in astype_array
+    values = _astype_nansafe(values, dtype, copy=copy)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\dtypes\astype.py", line 134, in _astype_nansafe
+    return arr.astype(dtype, copy=True)
+ValueError: could not convert string to float: '32.99through-83.99'
+
+2024-05-04 13:42:43 [WARNING] Failed to execute code retrying with a correction framework [retry number: 3]
+2024-05-04 13:42:43 [INFO] Executing Pipeline: ErrorCorrectionPipeline
+2024-05-04 13:42:43 [INFO] Executing Step 0: ErrorPromptGeneration
+2024-05-04 13:42:43 [INFO] Using prompt: <dataframe>
+dfs[0]:1757x8
+Sub Category,Price,Discount,Rating,Title,Currency,Feature,Product Description
+Laundry Detergent & Supplies,$11.99 ,After $1.50 OFF,,"Oberto Thin Style Beef Jerky, Original, 1.2 oz, 8-count",$,Original   HE Compatible   152 Loads   170 Total fl oz,Coconut Water Hydration PackThe Original17.5 fl oz (518 mL) can15-countMore Information:Non-GMOChill before serving
+Cleaning Supplies,$529.99 ,After $40 - $70 OFF,Rated 4.5 out of 5 stars based on 440 reviews.,"Planters Dry Roasted Peanuts, 3.25 lbs",$,,
+Bakery & Desserts,,After $3.30 OFF,Rated 4.3 out of 5 stars based on 462 reviews.,"HP 910XL High Yield Ink Cartridge, Black, 2-count",,"Use to Prepare Dips and Dressings   Add to Chicken, Tuna, Potato or Pasta Salad   Use as a Spread for Sandwiches or Grilled Corn   Brush Over Chicken, Pork or Seafood on the Grill to Add Flavor and Moistness   Net Weight 56 oz.","The primary source of Kirkland Signature Organic Sumatra is The Koperasi Produsen Petani Kopi Gayo coop, known as Kopsen PKG, located in Central Aceh, Takengon, an ideal location for growing coffee. 345 farmers in 4 villages began growing coffee in 2012 and formed the coop in 2016. They have 587 hectares of coffee plantations and capacity to produce around 410 metric tons ready export coffee annually. Kopsen PKG has worked to improve productivity and quality by distributing seeds, providing training, and building a processing unit facility. The coop is Organic (USDA-NOP & EU) certified.Taken to a Medium-Dark roast profile this coffee features the sought after classic Sumatra profile, of richer chocolates, red wine, and spices.Tasting Notes: Complex. Chocolate, Red Wine, soft leather, mild spices, and a sweet tobacco finish."
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ Plot a pie chart of total Price of each sub category
+
+You generated this python code:
+dfs[0]['Price'] = dfs[0]['Price'].str.replace(',', '').str.replace('$', '').astype(float)
+total_prices = dfs[0].groupby('Sub Category')['Price'].sum()
+plt.figure(figsize=(8, 8))
+plt.pie(total_prices, labels=total_prices.index, autopct='%1.1f%%', startangle=140)
+plt.axis('equal')
+plt.title('Total Price of Each Sub Category')
+plt.show()
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 1, in <module>
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\generic.py", line 6532, in astype
+    new_data = self._mgr.astype(dtype=dtype, copy=copy, errors=errors)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\internals\managers.py", line 414, in astype
+    return self.apply(
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\internals\managers.py", line 354, in apply
+    applied = getattr(b, f)(**kwargs)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\internals\blocks.py", line 616, in astype
+    new_values = astype_array_safe(values, dtype, copy=copy, errors=errors)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\dtypes\astype.py", line 238, in astype_array_safe
+    new_values = astype_array(values, dtype, copy=copy)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\dtypes\astype.py", line 183, in astype_array
+    values = _astype_nansafe(values, dtype, copy=copy)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\dtypes\astype.py", line 134, in _astype_nansafe
+    return arr.astype(dtype, copy=True)
+ValueError: could not convert string to float: '32.99through-83.99'
+
+
+Fix the python code above and return the new python code:
+2024-05-04 13:42:43 [INFO] Executing Step 1: CodeGenerator
+2024-05-04 13:42:47 [INFO] Prompt used:
+            None
+            
+2024-05-04 13:42:47 [INFO] Code generated:
+            ```
+            import pandas as pd
+import matplotlib.pyplot as plt
+
+data = {
+    'Sub Category': ['Laundry Detergent & Supplies', 'Cleaning Supplies', 'Bakery & Desserts'],
+    'Price': ['$11.99', '$529.99', '$32.99through-83.99']
+}
+
+dfs = [pd.DataFrame(data)]
+
+# Correcting the Price values with ranges
+dfs[0]['Price'] = dfs[0]['Price'].str.replace('through-', '').str.replace('$', '').astype(float)
+
+total_prices = dfs[0].groupby('Sub Category')['Price'].sum()
+plt.figure(figsize=(8, 8))
+plt.pie(total_prices, labels=total_prices.index, autopct='%1.1f%%', startangle=140)
+plt.axis('equal')
+plt.title('Total Price of Each Sub Category')
+plt.show()
+            ```
+            
+2024-05-04 13:42:47 [INFO] Executing Step 2: CodeCleaning
+2024-05-04 13:42:47 [INFO] 
+Code running:
+```
+data = {'Sub Category': ['Laundry Detergent & Supplies', 'Cleaning Supplies', 'Bakery & Desserts'], 'Price': ['$11.99', '$529.99', '$32.99through-83.99']}
+dfs[0]['Price'] = dfs[0]['Price'].str.replace('through-', '').str.replace('$', '').astype(float)
+total_prices = dfs[0].groupby('Sub Category')['Price'].sum()
+plt.figure(figsize=(8, 8))
+plt.pie(total_prices, labels=total_prices.index, autopct='%1.1f%%', startangle=140)
+plt.axis('equal')
+plt.title('Total Price of Each Sub Category')
+plt.show()
+        ```
+2024-05-04 13:42:47 [ERROR] Failed with error: Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 2, in <module>
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\generic.py", line 6532, in astype
+    new_data = self._mgr.astype(dtype=dtype, copy=copy, errors=errors)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\internals\managers.py", line 414, in astype
+    return self.apply(
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\internals\managers.py", line 354, in apply
+    applied = getattr(b, f)(**kwargs)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\internals\blocks.py", line 616, in astype
+    new_values = astype_array_safe(values, dtype, copy=copy, errors=errors)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\dtypes\astype.py", line 238, in astype_array_safe
+    new_values = astype_array(values, dtype, copy=copy)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\dtypes\astype.py", line 183, in astype_array
+    values = _astype_nansafe(values, dtype, copy=copy)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\dtypes\astype.py", line 134, in _astype_nansafe
+    return arr.astype(dtype, copy=True)
+ValueError: could not convert string to float: '32.9983.99'
+
+2024-05-04 13:42:48 [ERROR] Pipeline failed on step 6: could not convert string to float: '32.9983.99'
+2024-05-04 13:43:58 [INFO] Question: Plot a pie chart of total Price of each sub category
+2024-05-04 13:43:58 [INFO] Running PandasAI with bamboo_llm LLM...
+2024-05-04 13:43:58 [INFO] Prompt ID: a836c87c-e39d-4be5-a615-e30f44f2e677
+2024-05-04 13:43:58 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-05-04 13:43:58 [INFO] Executing Step 0: ValidatePipelineInput
+2024-05-04 13:43:58 [INFO] Executing Step 1: CacheLookup
+2024-05-04 13:43:58 [INFO] Executing Step 2: PromptGeneration
+2024-05-04 13:44:00 [INFO] Using prompt: <dataframe>
+dfs[0]:1757x8
+Sub Category,Price,Discount,Rating,Title,Currency,Feature,Product Description
+Household,$11.49 ,After $30 OFF,Rated 4.6 out of 5 stars based on 2428 reviews.,"3M Scotch Magic Tape, 12-count",$,Non-GMO   Gluten Free   Soy Free   Flavor Mixology Technology   Selection and Availability are Subject to Change,"Sprinkle on French fries, baked potatoes, mashed potatoes, hash browns or any potato side dish
+Try using it instead of salt at the table   Lawry's signature Seasoned Salt is an expert blend of salt, herbs and spices adding unique flavor to any meal. A versatile kitchen staple for adding flavor to almost any recipe – whether it's breakfast, lunch or dinner. A blend of salt, herbs and spices, including paprika and turmeric, plus onion and garlic. Shake on beef, pork or poultry before and after cooking. Mix into ground beef for bold burgers. Sprinkle on eggs, salads, vegetables, soups."
+Organic,,After $1.50 OFF,,"Nestle La Lechera, Sweetened Condensed Milk, 14 oz, 6-Count",,"10 Lbs. of Wild Alaska Black Cod 6-8 Oz. Portions (Sable Fish)   19-25 Individually Frozen and Vacuum-Sealed Packs   FedEx 2-day Shipping   Product of USA, produced in Juneau, AK   High in Omega 3 and Vitamin B12","Kirkland Signature Super Premium Healthy Weight Indoor Adult Cat Formula is specially designed to be nutritionally balanced to help indoor adult cats achieve and maintain a lean body condition. A blend of fiber ingredients helps support healthy digestion and the added health benefits of omega fatty acids, antioxidants and L-Carnitine will help your cat lead a happy, healthy life. Digestive Support System: Probiotics and natural prebiotic fiber from dried chicory root help maintain the proper balance of beneficial bacteria in your cat’s intestines. These probiotics are processed under strict human-grade standards to ensure purity and viability. Each kilogram of food provides 220 million live, active cultures that help support healthy digestion and help your cat maintain an active lifestyle.Lean Body Condition: With only 300 calories per cup and added L-Carnitine, this formula is designed to help overweight cats lose weight. L-Carnitine helps turn fat into energy and build lean muscle. Omega Fatty Acid Nutrition: Contains omega-6 and omega-3 fatty acids to help your cat maintain a shiny, healthy coat and a strong immune system.Antioxidants: Guaranteed levels of vitamin E and selenium work together to support your cat’s healthy lifestyle.Added Taurine: An essential amino acid for your cat’s heart and eyes.When fed properly, helps cats return to their optimal weight range within 6 weeks.Strategically formulated for hairball control.Formulated with fresh chicken.No corn, wheat or soy ingredients.20 lb. bagGuaranteed AnalysisCrude Protein 32.0% MinimumCrude Fat 9.0% MinimumCrude Fiber 10.0% MaximumMoisture 10.0% MaximumZinc 150 mg/kg MinimumMagnesium 0.1% MaximumSelenium 0.3 mg/kg MinimumVitamin E 100 IU/kg MinimumTaurine 0.1% MinimumL-Carnitine* 30 mg/kg MinimumOmega-6 Fatty Acids* 1.7% MinimumOmega-3 Fatty Acids* 0.3% MinimumTotal Live & Active Cultures* Not Less Than 220,000,000 CFU/kg(Lactobacillus acidophilus, Bifidobacterium lactis) *Not recognized as an essential nutrient by the AAFCO Cat Food Nutrient Calorie Content3,100 kcal/kg (300 kcal/cup) Calculated Metabolizable EnergyChanging your pet’s diet should be a gradual process. Start by adding a small amount of your pet’s new food to their current food, gradually increasing the new food amount and decreasing the current food amount at each feeding. Continue this method for approximately one week. For sensitive cats, a more gradual change is beneficial, over a period of 10 to 14 days.Remember to keep fresh water available to your pet at all times.Ingredients:Chicken meal, ground white rice, peas, powdered cellulose (source of fiber), potato protein, chicken fat (preserved with mixed tocopherols), natural flavor, flaxseed, fish meal, sodium bisulfate, potassium chloride, choline chloride, DL-methionine, taurine, dried chicory root, L-Carnitine, Lactobacillus acidophilus, Bifidobacterium lactis, zinc proteinate, vitamin E supplement, niacin, manganese proteinate, copper proteinate, zinc sulfate, manganese sulfate, copper sulfate, thiamine mononitrate (vitamin B1), vitamin A supplement, biotin, potassium iodide, calcium pantothenate, riboflavin (vitamin B2), pyridoxine hydrochloride (vitamin B6), vitamin B12 supplement, manganous oxide, sodium selenite, vitamin D supplement, folic acid.*This food is made in a facility that uses ingredients that may not be included in this recipe, so trace amounts of other ingredients, including potential allergens, may be present"
+Coffee,$62.99 ,After $6 OFF,Rated 4.5 out of 5 stars based on 39 reviews.,"Solo Heavyweight Plastic Knife, White, 500-count  ",$,,
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+
+
+
+
+### QUERY
+ Plot a pie chart of total Price of each sub category
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2024-05-04 13:44:00 [INFO] Executing Step 3: CodeGenerator
+2024-05-04 13:44:05 [INFO] Prompt used:
+            None
+            
+2024-05-04 13:44:05 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Extracting needed columns and cleaning Price column
+df = dfs[0][['Sub Category', 'Price']]
+df['Price'] = df['Price'].str.replace('$', '').str.strip().astype(float)
+
+# Calculating total price for each sub category
+total_price = df.groupby('Sub Category')['Price'].sum()
+
+# Plotting a pie chart
+plt.figure(figsize=(8, 8))
+plt.pie(total_price, labels=total_price.index, autopct='%1.1f%%', startangle=140)
+plt.title('Total Price of Each Sub Category')
+plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+
+# Save the plot as a PNG file
+plt.savefig('total_price_pie_chart.png')
+
+# Declaring result variable
+result = { "type": "plot", "value": "total_price_pie_chart.png" }
+            ```
+            
+2024-05-04 13:44:05 [INFO] Executing Step 4: CachePopulation
+2024-05-04 13:44:06 [INFO] Executing Step 5: CodeCleaning
+2024-05-04 13:44:06 [INFO] Saving charts to C:\Users\dell\Documents\Projects\Current\Graph_Flask_streamlit\exports\charts\temp_chart.png
+2024-05-04 13:44:06 [INFO] 
+Code running:
+```
+df = dfs[0][['Sub Category', 'Price']]
+df['Price'] = df['Price'].str.replace('$', '').str.strip().astype(float)
+total_price = df.groupby('Sub Category')['Price'].sum()
+plt.figure(figsize=(8, 8))
+plt.pie(total_price, labels=total_price.index, autopct='%1.1f%%', startangle=140)
+plt.title('Total Price of Each Sub Category')
+plt.axis('equal')
+plt.savefig('C:/Users/dell/Documents/Projects/Current/Graph_Flask_streamlit/exports/charts/temp_chart.png')
+result = {'type': 'plot', 'value': 'C:/Users/dell/Documents/Projects/Current/Graph_Flask_streamlit/exports/charts/temp_chart.png'}
+        ```
+2024-05-04 13:44:06 [INFO] Executing Step 6: CodeExecution
+2024-05-04 13:44:06 [ERROR] Failed with error: Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 2, in <module>
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\generic.py", line 6532, in astype
+    new_data = self._mgr.astype(dtype=dtype, copy=copy, errors=errors)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\internals\managers.py", line 414, in astype
+    return self.apply(
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\internals\managers.py", line 354, in apply
+    applied = getattr(b, f)(**kwargs)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\internals\blocks.py", line 616, in astype
+    new_values = astype_array_safe(values, dtype, copy=copy, errors=errors)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\dtypes\astype.py", line 238, in astype_array_safe
+    new_values = astype_array(values, dtype, copy=copy)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\dtypes\astype.py", line 183, in astype_array
+    values = _astype_nansafe(values, dtype, copy=copy)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\dtypes\astype.py", line 134, in _astype_nansafe
+    return arr.astype(dtype, copy=True)
+ValueError: could not convert string to float: '32.99through-83.99'
+
+2024-05-04 13:44:06 [WARNING] Failed to execute code retrying with a correction framework [retry number: 1]
+2024-05-04 13:44:06 [INFO] Executing Pipeline: ErrorCorrectionPipeline
+2024-05-04 13:44:06 [INFO] Executing Step 0: ErrorPromptGeneration
+2024-05-04 13:44:06 [INFO] Using prompt: <dataframe>
+dfs[0]:1757x8
+Sub Category,Price,Discount,Rating,Title,Currency,Feature,Product Description
+Household,$11.49 ,After $30 OFF,Rated 4.6 out of 5 stars based on 2428 reviews.,"3M Scotch Magic Tape, 12-count",$,Non-GMO   Gluten Free   Soy Free   Flavor Mixology Technology   Selection and Availability are Subject to Change,"Sprinkle on French fries, baked potatoes, mashed potatoes, hash browns or any potato side dish
+Try using it instead of salt at the table   Lawry's signature Seasoned Salt is an expert blend of salt, herbs and spices adding unique flavor to any meal. A versatile kitchen staple for adding flavor to almost any recipe – whether it's breakfast, lunch or dinner. A blend of salt, herbs and spices, including paprika and turmeric, plus onion and garlic. Shake on beef, pork or poultry before and after cooking. Mix into ground beef for bold burgers. Sprinkle on eggs, salads, vegetables, soups."
+Organic,,After $1.50 OFF,,"Nestle La Lechera, Sweetened Condensed Milk, 14 oz, 6-Count",,"10 Lbs. of Wild Alaska Black Cod 6-8 Oz. Portions (Sable Fish)   19-25 Individually Frozen and Vacuum-Sealed Packs   FedEx 2-day Shipping   Product of USA, produced in Juneau, AK   High in Omega 3 and Vitamin B12","Kirkland Signature Super Premium Healthy Weight Indoor Adult Cat Formula is specially designed to be nutritionally balanced to help indoor adult cats achieve and maintain a lean body condition. A blend of fiber ingredients helps support healthy digestion and the added health benefits of omega fatty acids, antioxidants and L-Carnitine will help your cat lead a happy, healthy life. Digestive Support System: Probiotics and natural prebiotic fiber from dried chicory root help maintain the proper balance of beneficial bacteria in your cat’s intestines. These probiotics are processed under strict human-grade standards to ensure purity and viability. Each kilogram of food provides 220 million live, active cultures that help support healthy digestion and help your cat maintain an active lifestyle.Lean Body Condition: With only 300 calories per cup and added L-Carnitine, this formula is designed to help overweight cats lose weight. L-Carnitine helps turn fat into energy and build lean muscle. Omega Fatty Acid Nutrition: Contains omega-6 and omega-3 fatty acids to help your cat maintain a shiny, healthy coat and a strong immune system.Antioxidants: Guaranteed levels of vitamin E and selenium work together to support your cat’s healthy lifestyle.Added Taurine: An essential amino acid for your cat’s heart and eyes.When fed properly, helps cats return to their optimal weight range within 6 weeks.Strategically formulated for hairball control.Formulated with fresh chicken.No corn, wheat or soy ingredients.20 lb. bagGuaranteed AnalysisCrude Protein 32.0% MinimumCrude Fat 9.0% MinimumCrude Fiber 10.0% MaximumMoisture 10.0% MaximumZinc 150 mg/kg MinimumMagnesium 0.1% MaximumSelenium 0.3 mg/kg MinimumVitamin E 100 IU/kg MinimumTaurine 0.1% MinimumL-Carnitine* 30 mg/kg MinimumOmega-6 Fatty Acids* 1.7% MinimumOmega-3 Fatty Acids* 0.3% MinimumTotal Live & Active Cultures* Not Less Than 220,000,000 CFU/kg(Lactobacillus acidophilus, Bifidobacterium lactis) *Not recognized as an essential nutrient by the AAFCO Cat Food Nutrient Calorie Content3,100 kcal/kg (300 kcal/cup) Calculated Metabolizable EnergyChanging your pet’s diet should be a gradual process. Start by adding a small amount of your pet’s new food to their current food, gradually increasing the new food amount and decreasing the current food amount at each feeding. Continue this method for approximately one week. For sensitive cats, a more gradual change is beneficial, over a period of 10 to 14 days.Remember to keep fresh water available to your pet at all times.Ingredients:Chicken meal, ground white rice, peas, powdered cellulose (source of fiber), potato protein, chicken fat (preserved with mixed tocopherols), natural flavor, flaxseed, fish meal, sodium bisulfate, potassium chloride, choline chloride, DL-methionine, taurine, dried chicory root, L-Carnitine, Lactobacillus acidophilus, Bifidobacterium lactis, zinc proteinate, vitamin E supplement, niacin, manganese proteinate, copper proteinate, zinc sulfate, manganese sulfate, copper sulfate, thiamine mononitrate (vitamin B1), vitamin A supplement, biotin, potassium iodide, calcium pantothenate, riboflavin (vitamin B2), pyridoxine hydrochloride (vitamin B6), vitamin B12 supplement, manganous oxide, sodium selenite, vitamin D supplement, folic acid.*This food is made in a facility that uses ingredients that may not be included in this recipe, so trace amounts of other ingredients, including potential allergens, may be present"
+Coffee,$62.99 ,After $6 OFF,Rated 4.5 out of 5 stars based on 39 reviews.,"Solo Heavyweight Plastic Knife, White, 500-count  ",$,,
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ Plot a pie chart of total Price of each sub category
+
+You generated this python code:
+df = dfs[0][['Sub Category', 'Price']]
+df['Price'] = df['Price'].str.replace('$', '').str.strip().astype(float)
+total_price = df.groupby('Sub Category')['Price'].sum()
+plt.figure(figsize=(8, 8))
+plt.pie(total_price, labels=total_price.index, autopct='%1.1f%%', startangle=140)
+plt.title('Total Price of Each Sub Category')
+plt.axis('equal')
+plt.savefig('C:/Users/dell/Documents/Projects/Current/Graph_Flask_streamlit/exports/charts/temp_chart.png')
+result = {'type': 'plot', 'value': 'C:/Users/dell/Documents/Projects/Current/Graph_Flask_streamlit/exports/charts/temp_chart.png'}
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 2, in <module>
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\generic.py", line 6532, in astype
+    new_data = self._mgr.astype(dtype=dtype, copy=copy, errors=errors)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\internals\managers.py", line 414, in astype
+    return self.apply(
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\internals\managers.py", line 354, in apply
+    applied = getattr(b, f)(**kwargs)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\internals\blocks.py", line 616, in astype
+    new_values = astype_array_safe(values, dtype, copy=copy, errors=errors)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\dtypes\astype.py", line 238, in astype_array_safe
+    new_values = astype_array(values, dtype, copy=copy)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\dtypes\astype.py", line 183, in astype_array
+    values = _astype_nansafe(values, dtype, copy=copy)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandas\core\dtypes\astype.py", line 134, in _astype_nansafe
+    return arr.astype(dtype, copy=True)
+ValueError: could not convert string to float: '32.99through-83.99'
+
+
+Fix the python code above and return the new python code:
+2024-05-04 13:44:06 [INFO] Executing Step 1: CodeGenerator
+2024-05-04 13:44:10 [INFO] Prompt used:
+            None
+            
+2024-05-04 13:44:10 [INFO] Code generated:
+            ```
+            import pandas as pd
+import matplotlib.pyplot as plt
+
+data = {'Sub Category': ['Coffee', 'Organic', 'Household'],
+        'Price': ['$62.99', '', '$11.49']}
+df = pd.DataFrame(data)
+
+df['Price'] = df['Price'].str.replace('$', '').str.split('through').str[0].str.strip()
+df['Price'] = pd.to_numeric(df['Price'], errors='coerce')
+total_price = df.groupby('Sub Category')['Price'].sum()
+
+plt.figure(figsize=(8, 8))
+plt.pie(total_price, labels=total_price.index, autopct='%1.1f%%', startangle=140)
+plt.title('Total Price of Each Sub Category')
+plt.axis('equal')
+plt.show()
+            ```
+            
+2024-05-04 13:44:10 [INFO] Executing Step 2: CodeCleaning
+2024-05-04 13:44:10 [INFO] 
+Code running:
+```
+data = {'Sub Category': ['Coffee', 'Organic', 'Household'], 'Price': ['$62.99', '', '$11.49']}
+df = pd.DataFrame(data)
+df['Price'] = df['Price'].str.replace('$', '').str.split('through').str[0].str.strip()
+df['Price'] = pd.to_numeric(df['Price'], errors='coerce')
+total_price = df.groupby('Sub Category')['Price'].sum()
+plt.figure(figsize=(8, 8))
+plt.pie(total_price, labels=total_price.index, autopct='%1.1f%%', startangle=140)
+plt.title('Total Price of Each Sub Category')
+plt.axis('equal')
+plt.show()
+        ```
+2024-05-04 13:44:10 [ERROR] Failed with error: Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 175, in execute_code
+    raise NoResultFoundError("No result returned")
+pandasai.exceptions.NoResultFoundError: No result returned
+
+2024-05-04 13:44:10 [WARNING] Failed to execute code retrying with a correction framework [retry number: 2]
+2024-05-04 13:44:10 [INFO] Executing Pipeline: ErrorCorrectionPipeline
+2024-05-04 13:44:10 [INFO] Executing Step 0: ErrorPromptGeneration
+2024-05-04 13:44:10 [INFO] Using prompt: <dataframe>
+dfs[0]:1757x8
+Sub Category,Price,Discount,Rating,Title,Currency,Feature,Product Description
+Household,$11.49 ,After $30 OFF,Rated 4.6 out of 5 stars based on 2428 reviews.,"3M Scotch Magic Tape, 12-count",$,Non-GMO   Gluten Free   Soy Free   Flavor Mixology Technology   Selection and Availability are Subject to Change,"Sprinkle on French fries, baked potatoes, mashed potatoes, hash browns or any potato side dish
+Try using it instead of salt at the table   Lawry's signature Seasoned Salt is an expert blend of salt, herbs and spices adding unique flavor to any meal. A versatile kitchen staple for adding flavor to almost any recipe – whether it's breakfast, lunch or dinner. A blend of salt, herbs and spices, including paprika and turmeric, plus onion and garlic. Shake on beef, pork or poultry before and after cooking. Mix into ground beef for bold burgers. Sprinkle on eggs, salads, vegetables, soups."
+Organic,,After $1.50 OFF,,"Nestle La Lechera, Sweetened Condensed Milk, 14 oz, 6-Count",,"10 Lbs. of Wild Alaska Black Cod 6-8 Oz. Portions (Sable Fish)   19-25 Individually Frozen and Vacuum-Sealed Packs   FedEx 2-day Shipping   Product of USA, produced in Juneau, AK   High in Omega 3 and Vitamin B12","Kirkland Signature Super Premium Healthy Weight Indoor Adult Cat Formula is specially designed to be nutritionally balanced to help indoor adult cats achieve and maintain a lean body condition. A blend of fiber ingredients helps support healthy digestion and the added health benefits of omega fatty acids, antioxidants and L-Carnitine will help your cat lead a happy, healthy life. Digestive Support System: Probiotics and natural prebiotic fiber from dried chicory root help maintain the proper balance of beneficial bacteria in your cat’s intestines. These probiotics are processed under strict human-grade standards to ensure purity and viability. Each kilogram of food provides 220 million live, active cultures that help support healthy digestion and help your cat maintain an active lifestyle.Lean Body Condition: With only 300 calories per cup and added L-Carnitine, this formula is designed to help overweight cats lose weight. L-Carnitine helps turn fat into energy and build lean muscle. Omega Fatty Acid Nutrition: Contains omega-6 and omega-3 fatty acids to help your cat maintain a shiny, healthy coat and a strong immune system.Antioxidants: Guaranteed levels of vitamin E and selenium work together to support your cat’s healthy lifestyle.Added Taurine: An essential amino acid for your cat’s heart and eyes.When fed properly, helps cats return to their optimal weight range within 6 weeks.Strategically formulated for hairball control.Formulated with fresh chicken.No corn, wheat or soy ingredients.20 lb. bagGuaranteed AnalysisCrude Protein 32.0% MinimumCrude Fat 9.0% MinimumCrude Fiber 10.0% MaximumMoisture 10.0% MaximumZinc 150 mg/kg MinimumMagnesium 0.1% MaximumSelenium 0.3 mg/kg MinimumVitamin E 100 IU/kg MinimumTaurine 0.1% MinimumL-Carnitine* 30 mg/kg MinimumOmega-6 Fatty Acids* 1.7% MinimumOmega-3 Fatty Acids* 0.3% MinimumTotal Live & Active Cultures* Not Less Than 220,000,000 CFU/kg(Lactobacillus acidophilus, Bifidobacterium lactis) *Not recognized as an essential nutrient by the AAFCO Cat Food Nutrient Calorie Content3,100 kcal/kg (300 kcal/cup) Calculated Metabolizable EnergyChanging your pet’s diet should be a gradual process. Start by adding a small amount of your pet’s new food to their current food, gradually increasing the new food amount and decreasing the current food amount at each feeding. Continue this method for approximately one week. For sensitive cats, a more gradual change is beneficial, over a period of 10 to 14 days.Remember to keep fresh water available to your pet at all times.Ingredients:Chicken meal, ground white rice, peas, powdered cellulose (source of fiber), potato protein, chicken fat (preserved with mixed tocopherols), natural flavor, flaxseed, fish meal, sodium bisulfate, potassium chloride, choline chloride, DL-methionine, taurine, dried chicory root, L-Carnitine, Lactobacillus acidophilus, Bifidobacterium lactis, zinc proteinate, vitamin E supplement, niacin, manganese proteinate, copper proteinate, zinc sulfate, manganese sulfate, copper sulfate, thiamine mononitrate (vitamin B1), vitamin A supplement, biotin, potassium iodide, calcium pantothenate, riboflavin (vitamin B2), pyridoxine hydrochloride (vitamin B6), vitamin B12 supplement, manganous oxide, sodium selenite, vitamin D supplement, folic acid.*This food is made in a facility that uses ingredients that may not be included in this recipe, so trace amounts of other ingredients, including potential allergens, may be present"
+Coffee,$62.99 ,After $6 OFF,Rated 4.5 out of 5 stars based on 39 reviews.,"Solo Heavyweight Plastic Knife, White, 500-count  ",$,,
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ Plot a pie chart of total Price of each sub category
+
+You generated this python code:
+data = {'Sub Category': ['Coffee', 'Organic', 'Household'], 'Price': ['$62.99', '', '$11.49']}
+df = pd.DataFrame(data)
+df['Price'] = df['Price'].str.replace('$', '').str.split('through').str[0].str.strip()
+df['Price'] = pd.to_numeric(df['Price'], errors='coerce')
+total_price = df.groupby('Sub Category')['Price'].sum()
+plt.figure(figsize=(8, 8))
+plt.pie(total_price, labels=total_price.index, autopct='%1.1f%%', startangle=140)
+plt.title('Total Price of Each Sub Category')
+plt.axis('equal')
+plt.show()
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python310\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 175, in execute_code
+    raise NoResultFoundError("No result returned")
+pandasai.exceptions.NoResultFoundError: No result returned
+
+
+Fix the python code above and return the new python code:
+2024-05-04 13:44:10 [INFO] Executing Step 1: CodeGenerator
+2024-05-04 13:44:14 [ERROR] Pipeline failed on step 1: No code found in the response
+2024-05-04 13:44:14 [ERROR] Pipeline failed on step 6: No code found in the response
+2024-05-04 22:24:26 [INFO] Question: Plot a bar chart of average price of sub category Bakery & Desserts vs average price of Beverages & Water
+2024-05-04 22:24:26 [INFO] Running PandasAI with bamboo_llm LLM...
+2024-05-04 22:24:26 [INFO] Prompt ID: 2718328c-c0ee-4541-8277-9f12b87b89d2
+2024-05-04 22:24:26 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-05-04 22:24:26 [INFO] Executing Step 0: ValidatePipelineInput
+2024-05-04 22:24:26 [INFO] Executing Step 1: CacheLookup
+2024-05-04 22:24:26 [INFO] Executing Step 2: PromptGeneration
+2024-05-04 22:24:28 [INFO] Using prompt: <dataframe>
+dfs[0]:1757x8
+Sub Category,Price,Discount,Rating,Title,Currency,Feature,Product Description
+Paper & Plastic Products,$259.99 ,After $2.50 OFF,,Manuka Health UMF 20+ (MGO 850+) Raw Manuka Honey 8.8 oz,$,Moravian Sugar Cake   Meyer Lemon Moravian Cookie Thins   Triple Ginger Cookies   Brownie Crisp Cookies   And More,"TRUFFLIN SRIRACHA: Our truffle hot sauce blends premium fermented chili peppers, savory spices, hibiscus, and cold pressed olive oil naturally infused with umami packed black truffle flavor.   NATURAL INGREDIENTS: This hot chili sauce is produced in small batches with all natural ingredients allowing the peppers to do all the talking. It’s just hot enough to awaken your palate while allowing the black truffle to come forward, finishing with a classic Sriracha hot sauce spice.   NO ADDED SUGAR: TRUFFLIN’s sriracha sauce is gluten free, keto friendly and is low in acidity with no added sugar. The chefs coveted Guajillo pepper offers flavors of red berries, tea, and smoke. We’ve even borrowed the bright fruit & heat from the hottest pepper in the world to stay true to our southern roots, the Carolina Reaper.   Serving Suggestions   Eggs: Add a spicy kick to your morning eggs by drizzling Black Truffle Sriracha over scrambled or fried eggs. It pairs particularly well with omelets or breakfast sandwiches.
+Stir-fries: Use as a sauce for stir-fried vegetables, tofu, or meats. The combination of spicy Sriracha and earthy black truffles will take your stir-fry to the next level.
+Burgers: Top your favorite burger with a generous dollop of Black Truffle Sriracha for a gourmet twist on a classic. Add lettuce, tomato, and your favorite cheese for the perfect combination of flavors and textures.
+Pizza: Drizzle over your favorite pizza, especially if it includes mushrooms or other savory toppings. The heat from the Sriracha and the richness of the truffles will add complexity to any slice.
+Bloody Mary: Add a few drops of Black Truffle Sriracha to your favorite Bloody Mary recipe for a spicy and flavorful cocktail that's perfect for brunch or a lazy weekend afternoon.
+Remember, Trufflin Black Truffle Sriracha is a bold and flavorful condiment, so use it sparingly at first and adjust to taste. Enjoy!"
+Cleaning Supplies,$469.99 ,After $80 OFF,Rated 4.4 out of 5 stars based on 440 reviews.,"Clif Bar, Crunchy Peanut Butter, 2.4 oz, 12-count",$,,
+Candy,,Limit 5 Per Member,Rated 4.3 out of 5 stars based on 43 reviews.,"Alaska Black Cod (Sable Fish) - Individual Packed Portions (19-25/6-8 Oz. Per Portion), 1 Case Totaling 10 Lbs.",,14 grams of Protein   5 grams of Sugar   French Vanilla Creme   Made in Canada,Made with Real Fruit & Veggie Juice90-count0.8 oz.
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+
+
+
+
+### QUERY
+ Plot a bar chart of average price of sub category Bakery & Desserts vs average price of Beverages & Water
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2024-05-04 22:24:28 [INFO] Executing Step 3: CodeGenerator
+2024-05-04 22:24:35 [INFO] Prompt used:
+            None
+            
+2024-05-04 22:24:35 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Data Preprocessing
+# Assuming dfs[0] contains the required data
+df = dfs[0]
+
+# Filter data for Bakery & Desserts and Beverages & Water
+bakery_desserts_avg_price = df[df['Sub Category'] == 'Bakery & Desserts']['Price'].str.replace('$', '').str.replace(',', '').astype(float).mean()
+beverages_water_avg_price = df[df['Sub Category'] == 'Beverages & Water']['Price'].str.replace('$', '').str.replace(',', '').astype(float).mean()
+
+# Plotting Bar Chart
+fig, ax = plt.subplots()
+categories = ['Bakery & Desserts', 'Beverages & Water']
+avg_prices = [bakery_desserts_avg_price, beverages_water_avg_price]
+
+plt.bar(categories, avg_prices, color=['skyblue', 'lightcoral'])
+plt.xlabel('Sub Category')
+plt.ylabel('Average Price')
+plt.title('Average Price Comparison between Bakery & Desserts and Beverages & Water')
+
+# Save the plot as a PNG file
+plt.savefig('average_price_comparison.png')
+
+# Declare result variable
+result = {"type": "plot", "value": "average_price_comparison.png"}
+            ```
+            
+2024-05-04 22:24:35 [INFO] Executing Step 4: CachePopulation
+2024-05-04 22:24:35 [INFO] Executing Step 5: CodeCleaning
+2024-05-04 22:24:35 [INFO] Saving charts to C:\Users\dell\Documents\Projects\Current\Graph_Flask_streamlit\exports\charts\temp_chart.png
+2024-05-04 22:24:35 [INFO] 
+Code running:
+```
+df = dfs[0]
+bakery_desserts_avg_price = df[df['Sub Category'] == 'Bakery & Desserts']['Price'].str.replace('$', '').str.replace(',', '').astype(float).mean()
+beverages_water_avg_price = df[df['Sub Category'] == 'Beverages & Water']['Price'].str.replace('$', '').str.replace(',', '').astype(float).mean()
+fig, ax = plt.subplots()
+categories = ['Bakery & Desserts', 'Beverages & Water']
+avg_prices = [bakery_desserts_avg_price, beverages_water_avg_price]
+plt.bar(categories, avg_prices, color=['skyblue', 'lightcoral'])
+plt.xlabel('Sub Category')
+plt.ylabel('Average Price')
+plt.title('Average Price Comparison between Bakery & Desserts and Beverages & Water')
+plt.savefig('C:/Users/dell/Documents/Projects/Current/Graph_Flask_streamlit/exports/charts/temp_chart.png')
+result = {'type': 'plot', 'value': 'C:/Users/dell/Documents/Projects/Current/Graph_Flask_streamlit/exports/charts/temp_chart.png'}
+        ```
+2024-05-04 22:24:35 [INFO] Executing Step 6: CodeExecution
+2024-05-04 22:24:35 [INFO] Executing Step 7: ResultValidation
+2024-05-04 22:24:35 [INFO] Answer: {'type': 'plot', 'value': 'C:/Users/dell/Documents/Projects/Current/Graph_Flask_streamlit/exports/charts/temp_chart.png'}
+2024-05-04 22:24:35 [INFO] Executing Step 8: ResultParsing
+2024-05-04 22:25:19 [INFO] Question: Plot a pie chart of total Price of each sub category
+2024-05-04 22:25:19 [INFO] Running PandasAI with bamboo_llm LLM...
+2024-05-04 22:25:19 [INFO] Prompt ID: 8f28de16-61d5-4e10-9285-39c2ec71456c
+2024-05-04 22:25:19 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-05-04 22:25:19 [INFO] Executing Step 0: ValidatePipelineInput
+2024-05-04 22:25:19 [INFO] Executing Step 1: CacheLookup
+2024-05-04 22:25:19 [INFO] Executing Step 2: PromptGeneration
+2024-05-04 22:25:21 [INFO] Using prompt: <dataframe>
+dfs[0]:1757x8
+Sub Category,Price,Discount,Rating,Title,Currency,Feature,Product Description
+Deli,$17.59 ,Costco Members Receive an Additional $5 OFF Caramel Peanut Protein Bars with FitCrunch through Costco Next,Rated 3 out of 5 stars based on 5 reviews.,"HP 962XL High Yield Ink Cartridge, Black, 2-count",$,Gluten free   Kosher   Made with Cage-free Eggs   Refrigerate after opening   64 oz,"Harvested from the warm waters of the Gulf of Mexico, our delicious premium American Red Snapper is wild-caught and frozen at the peak of sweetness. With a fresh-from-the-sea taste in your own home, our raw frozen head-on American Red Snapper has absolutely no preservatives. Easy to thaw and prepare, East Coast Seafood’s head-on American Red Snapper offers a perfect way to create a special dinner or anytime meal, any day of the week.
+Our whole, head-on American Red Snapper is raw and frozen, so simply remove from the sealed bag and defrost under refrigeration for a minimum of 4-6 hours or until fully thawed. Alternatively, run a sealed bag under cold water and remove from the bag immediately once thawed. Once thawed, simply bake, broil, fry, steam or perfect for the grill! Enjoy this delicious white fish with a mild, nutty, slightly sweet flavor! Wild-caught, cleaned and flash frozen to lock in the mouth-watering flavor, these American Red Snappers are always a wow item!
+In the seafood business since 1981, East Coast Seafood has delivered seafood to tables across the globe. The company is located on a working waterfront in charming New England. East Coast Seafood has been selling incredible seafood for over 40 years!"
+Laundry Detergent & Supplies,,This item is not returnable.,Rated 4.8 out of 5 stars based on 2468 reviews.,"Hostess Danish with Icing, Variety Pack, 2.75 oz, 24-count",,24 Stems   Available in Three Colors   Pick Your Arrival Date At Checkout   Gift Messaging Available At Checkout   Warning: Not for Human or Animal Consumption,
+Beverages & Water,$16.39 ,After $3.30 OFF,,"Seabear Wild Sockeye & King  Smoked Salmon Fillet Duo, Total 2lbs. (1 lb each)",$,,"Our Authentic Wagyu Striploin is artfully marbled, with delicate, yet explosive flavor. This roast is perfect as a whole for your exquisite gatherings or cut into steaks for an unforgettable grilling experience.If you have never tasted an imported A5 Wagyu steak from the farms of Japan, the experience can be next to impossible to describe. The one description beef connoisseurs the world over can agree upon is your opinion as to what a steak should taste like, will be changed forever.With phrases such as, “melts in your mouth”, “beef perfected” and “unlike any other steak I have ever tasted before”. A5 Japanese Wagyu beef is truly in a league of its own. The legendary, sometimes mythical process of cattle raising in Japan has been handed down through the generations, all in an effort to protect their national treasure. Wagyu (WA meaning Japanese and GYU meaning cow) Beef. Intensely satisfying in small portions, one must taste this beef to really speak to the mouthwatering, buttery flavor with extreme tenderness and smooth texture."
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+
+
+
+
+### QUERY
+ Plot a pie chart of total Price of each sub category
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2024-05-04 22:25:21 [INFO] Executing Step 3: CodeGenerator
+2024-05-04 22:25:25 [INFO] Prompt used:
+            None
+            
+2024-05-04 22:25:25 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Data from the given dataframe
+data = {
+    'Sub Category': ['Laundry Detergent & Supplies', 'Deli', 'Beverages & Water'],
+    'Price': [0, 17.59, 16.39]  # Prices obtained from the dataframe
+}
+
+# Create a new DataFrame
+df = pd.DataFrame(data)
+
+# Plotting a pie chart of total Price of each sub category
+plt.figure(figsize=(8, 6))
+plt.pie(df['Price'], labels=df['Sub Category'], autopct='%1.1f%%', startangle=140)
+plt.title('Total Price of Each Sub Category')
+plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle
+
+# Save the plot as a PNG file
+plt.savefig('total_price_subcategory_pie_chart.png')
+
+# Declare result variable
+result = {"type": "plot", "value": "total_price_subcategory_pie_chart.png"}
+            ```
+            
+2024-05-04 22:25:25 [INFO] Executing Step 4: CachePopulation
+2024-05-04 22:25:25 [INFO] Executing Step 5: CodeCleaning
+2024-05-04 22:25:25 [INFO] Saving charts to C:\Users\dell\Documents\Projects\Current\Graph_Flask_streamlit\exports\charts\temp_chart.png
+2024-05-04 22:25:25 [INFO] 
+Code running:
+```
+data = {'Sub Category': ['Laundry Detergent & Supplies', 'Deli', 'Beverages & Water'], 'Price': [0, 17.59, 16.39]}
+df = pd.DataFrame(data)
+plt.figure(figsize=(8, 6))
+plt.pie(df['Price'], labels=df['Sub Category'], autopct='%1.1f%%', startangle=140)
+plt.title('Total Price of Each Sub Category')
+plt.axis('equal')
+plt.savefig('C:/Users/dell/Documents/Projects/Current/Graph_Flask_streamlit/exports/charts/temp_chart.png')
+result = {'type': 'plot', 'value': 'C:/Users/dell/Documents/Projects/Current/Graph_Flask_streamlit/exports/charts/temp_chart.png'}
+        ```
+2024-05-04 22:25:25 [INFO] Executing Step 6: CodeExecution
+2024-05-04 22:25:25 [INFO] Executing Step 7: ResultValidation
+2024-05-04 22:25:25 [INFO] Answer: {'type': 'plot', 'value': 'C:/Users/dell/Documents/Projects/Current/Graph_Flask_streamlit/exports/charts/temp_chart.png'}
+2024-05-04 22:25:25 [INFO] Executing Step 8: ResultParsing

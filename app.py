@@ -4,6 +4,21 @@ import streamlit as st
 from pandasai import Agent
 from pandasai.responses.streamlit_response import StreamlitResponse
 from PIL import Image
+import random
+import time
+
+# Streamed response emulator
+def response_generator():
+    response = random.choice(
+        [
+            "Hello there! How can I assist you today?",
+            "Hi, human! Is there anything I can help you with?",
+            "Do you need help?",
+        ]
+    )
+    for word in response.split():
+        yield word + " "
+        time.sleep(0.05)
 
 # Function to load CSV file
 @st.cache_data
@@ -29,12 +44,32 @@ if file is not None:
                 },
     )
 
+    # Initialize chat history
+    if "messages" not in st.session_state:
+        st.session_state.messages = []
+
+    # Display chat messages from history on app rerun
+    chat_container = st.empty()
+    for message in st.session_state.messages:
+        if message["role"] == "user":
+            chat_container.text(f"You: {message['content']}")
+        else:
+            chat_container.text(f"Assistant: {message['content']}")
+
     # Chat Interface
     st.subheader("Chat Interface")
-    user_input = st.text_input("Enter your query:")
+    user_input = st.text_input("You:", key="user_input")
     if st.button("Send"):
+        # Add user message to chat history
+        st.session_state.messages.append({"role": "user", "content": user_input})
+        # Get response from the assistant
         response = agent.chat(user_input)
+
         if os.path.exists(response):  # Check if the response is a file path
             st.image(Image.open(response))  # Display the image
         else:
-            st.write(response)  # If not a file path, print the response as text
+            # If not a file path, add assistant response to chat history
+            st.session_state.messages.append({"role": "assistant", "content": response})
+
+        # Clear the previous input
+        user_input = ""
